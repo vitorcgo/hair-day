@@ -1,0 +1,15 @@
+# Dependências e build
+node_modules/
+dist/
+
+# Arquivos locais e logs
+*.local
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Relatórios completos locais; evidências selecionadas ficam em docs/.
+test-results/
+playwright-report/
+playwright/.cache/

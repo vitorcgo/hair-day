@@ -1,0 +1,170 @@
+{
+  "generatedFrom": "Playwright JSON reporter — test-results/results.json",
+  "playwrightVersion": "1.65.0",
+  "nodeVersion": "v22.11.0",
+  "platform": "win32",
+  "stats": {
+    "startTime": "2026-11-11T00:48:59.856Z",
+    "duration": 49076.496,
+    "expected": 14,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "mostra os três períodos vazios e valida campos obrigatórios",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1159
+        }
+      ]
+    },
+    {
+      "title": "mostra os três períodos vazios e valida campos obrigatórios",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 986
+        }
+      ]
+    },
+    {
+      "title": "cadastra, agrupa e ordena os limites dos três períodos",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1327
+        }
+      ]
+    },
+    {
+      "title": "cadastra, agrupa e ordena os limites dos três períodos",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1706
+        }
+      ]
+    },
+    {
+      "title": "filtra por data e exclui apenas o agendamento escolhido",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1117
+        }
+      ]
+    },
+    {
+      "title": "filtra por data e exclui apenas o agendamento escolhido",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1258
+        }
+      ]
+    },
+    {
+      "title": "switch respeita 64 por 40 px e preserva o formulário e a agenda",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1101
+        }
+      ]
+    },
+    {
+      "title": "switch respeita 64 por 40 px e preserva o formulário e a agenda",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1216
+        }
+      ]
+    },
+    {
+      "title": "permite operar horários e switch pelo teclado",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 806
+        }
+      ]
+    },
+    {
+      "title": "permite operar horários e switch pelo teclado",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 852
+        }
+      ]
+    },
+    {
+      "title": "acomoda nomes longos e erros sem rolagem horizontal",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1084
+        }
+      ]
+    },
+    {
+      "title": "acomoda nomes longos e erros sem rolagem horizontal",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1099
+        }
+      ]
+    },
+    {
+      "title": "registra capturas desktop e mobile nos dois temas",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2334
+        }
+      ]
+    },
+    {
+      "title": "registra capturas desktop e mobile nos dois temas",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2032
+        }
+      ]
+    }
+  ]
+}

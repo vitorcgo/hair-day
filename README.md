@@ -2,6 +2,37 @@
 
 Interface de agendamentos em React 19 e TypeScript, baseada no Figma do projeto.
 
+**Repositório:** [github.com/vitorcgo/hair-day](https://github.com/vitorcgo/hair-day).
+
+## Material da entrega
+
+| Requisito | Arquivo ou endereço |
+| --- | --- |
+| Repositório GitHub | [vitorcgo/hair-day](https://github.com/vitorcgo/hair-day) |
+| Documentação | Este README |
+| Instruções do agente | [AGENTS.md](./AGENTS.md) |
+| Capturas desktop e mobile | [Galeria de capturas](#capturas-de-tela) |
+| Evidência do Context7 | [Consultas, retornos e aplicação no código](./docs/evidence/context7.md) |
+| Evidência do Playwright | [Roteiro e resultados](./docs/evidence/playwright.md) |
+| Deploy pelo GitHub Actions | [deploy.yml](./.github/workflows/deploy.yml) |
+
+## Capturas de tela
+
+As imagens são geradas pelo Playwright a partir do build de produção, com agendamentos fictícios inseridos pela interface. Elas não são montagens nem capturas do Figma.
+
+### Desktop — 1440 × 1000 px
+
+| Tema escuro | Tema claro |
+| --- | --- |
+| ![Hair Day desktop, tema escuro](./docs/screenshots/desktop-dark.png) | ![Hair Day desktop, tema claro](./docs/screenshots/desktop-light.png) |
+
+### Mobile — viewport de 390 × 844 px
+
+As capturas mobile incluem a página inteira, por isso a altura final é maior que a viewport.
+
+<img src="./docs/screenshots/mobile-dark.png" alt="Hair Day mobile, tema escuro" width="280" />
+<img src="./docs/screenshots/mobile-light.png" alt="Hair Day mobile, tema claro" width="280" />
+
 ## Executar
 
 Use uma versão do Node compatível com as dependências instaladas (preferencialmente Node 22.13+ na linha 22 ou uma versão LTS mais recente).
@@ -54,6 +85,34 @@ Os dados ficam somente no estado React: recarregar a página apaga os agendament
 - `src/index.css`: tokens de cores e tipografia do design system, estilos base e estados dos controles.
 
 A fonte Catamaran é carregada pelo Google Fonts e precisa de conexão para o primeiro carregamento.
+
+## Testes automatizados e geração de evidências
+
+Após instalar as dependências:
+
+```sh
+npx playwright install chromium
+npm run test:e2e
+npm run test:evidence
+npm run test:report
+```
+
+Os testes fazem um novo build, iniciam um servidor exclusivo na porta 4180 e validam os fluxos em Chromium, com projetos desktop e mobile. Ao final:
+
+- `docs/screenshots/`: quatro capturas da aplicação, nos dois temas.
+- `test-results/results.json`: relatório bruto do Playwright, ignorado pelo Git.
+- `playwright-report/`: relatório HTML local, ignorado pelo Git.
+- `docs/evidence/playwright-results.json`: resumo reproduzível do relatório bruto, gerado por `npm run test:evidence` e incluído na entrega.
+
+Para aproveitar um Chrome já instalado no Windows, sem baixar Chromium:
+
+```powershell
+$env:PLAYWRIGHT_CHANNEL = 'chrome'
+npm.cmd run test:e2e
+npm.cmd run test:evidence
+```
+
+A emulação mobile usa Chromium com viewport e toque; não substitui um teste em aparelho físico. As capturas documentam o resultado, mas não são testes de regressão visual contra o Figma.
 
 ## Roteiro de teste manual
 
