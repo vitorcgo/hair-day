@@ -310,4 +310,4 @@ Se não houver acesso ao navegador, execute as verificações possíveis e descr
 - Não alegue testes, consultas ou validações que não foram realizados.
 - Não sacrifique a legibilidade por abstrações prematuras.
 
-Analise, planeje, implemente, valide e explique — sempre respeitando o escopo da tarefa e o aprendizado do desenvolvedor.
+Analise, planeje, implemente, valide e explique — sempre respeitando o escopo da tarefa e o aprendizado do desenvolvedor
