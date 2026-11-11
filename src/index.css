@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Catamaran", sans-serif;
+
+  --color-yellow-light: #dbc170;
+  --color-yellow: #b8952e;
+  --color-yellow-dark: #846f2e;
+  --color-gray-100: #f5f4f5;
+  --color-gray-200: #b2afb6;
+  --color-gray-300: #98959d;
+  --color-gray-400: #7a767f;
+  --color-gray-500: #3e3c41;
+  --color-gray-600: #2e2c30;
+  --color-gray-700: #232225;
+  --color-gray-800: #19181b;
+  --color-gray-900: #050505;
+
+  --text-title-lg: 2rem;
+  --text-title-lg--line-height: 1.5rem;
+  --text-title-lg--font-weight: 700;
+  --text-title-md: 1rem;
+  --text-title-md--line-height: 1.5rem;
+  --text-title-md--font-weight: 700;
+  --text-title-sm: 0.875rem;
+  --text-title-sm--line-height: 1.25rem;
+  --text-title-sm--font-weight: 700;
+}
+
+/* Tokens semânticos: os componentes não precisam conhecer a paleta de cada tema. */
+@theme inline {
+  --color-page: var(--surface-page);
+  --color-panel: var(--surface-panel);
+  --color-slot: var(--surface-slot);
+  --color-slot-hover: var(--surface-slot-hover);
+  --color-strong: var(--content-strong);
+  --color-body: var(--content-body);
+  --color-muted: var(--content-muted);
+  --color-line: var(--border-default);
+  --color-divider: var(--border-subtle);
+  --color-accent: var(--content-accent);
+  --color-notice: var(--content-notice);
+  --color-focus: var(--focus-ring);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --surface-page: var(--color-gray-800);
+    --surface-panel: var(--color-gray-700);
+    --surface-slot: var(--color-gray-600);
+    --surface-slot-hover: var(--color-gray-500);
+    --content-strong: var(--color-gray-100);
+    --content-body: var(--color-gray-200);
+    --content-muted: var(--color-gray-300);
+    --border-default: var(--color-gray-500);
+    --border-subtle: var(--color-gray-600);
+    --content-accent: var(--color-yellow);
+    --content-notice: var(--color-yellow-light);
+    --focus-ring: var(--color-yellow-light);
+
+    font-family: var(--font-sans);
+    color: var(--content-body);
+    background: var(--surface-page);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --surface-page: var(--color-gray-100);
+    --surface-panel: #ffffff;
+    --surface-slot: #eeecef;
+    --surface-slot-hover: #e3e0e5;
+    --content-strong: var(--color-gray-800);
+    --content-body: var(--color-gray-500);
+    --content-muted: #69656e;
+    --border-default: #c4c0c8;
+    --border-subtle: #dedbe1;
+    --content-accent: #756020;
+    --content-notice: #756020;
+    --focus-ring: #756020;
+  }
+
+  body { min-width: 320px; }
+  button, input { font: inherit; }
+  button:not(:disabled), label:has(input[type="radio"]:not(:disabled)) { cursor: pointer; }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 4px;
+  }
+}
+
+@layer components {
+  .form-control {
+    @apply flex min-h-12 min-w-0 items-center gap-2 rounded-lg border border-line px-3;
+    @apply focus-within:border-accent;
+  }
+
+  .form-control input {
+    @apply w-full min-w-0 flex-1 bg-transparent py-3 text-base/6 text-body outline-none;
+  }
+
+  .form-control input::placeholder { color: var(--content-muted); }
+
+  /* Mantém o seletor nativo clicável, com o ícone do design por cima. */
+  .form-control input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .primary-button {
+    @apply min-h-14 w-full rounded-lg border-2 border-transparent bg-yellow px-4 text-title-sm text-gray-900;
+    @apply hover:border-focus disabled:cursor-not-allowed disabled:opacity-30;
+  }
+
+  .time-slot {
+    @apply flex min-h-11 items-center justify-center rounded-lg border border-line bg-slot px-2 text-base/6;
+    @apply hover:bg-slot-hover peer-checked:border-accent peer-checked:text-accent peer-checked:font-bold;
+    @apply peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-focus;
+    @apply peer-disabled:cursor-not-allowed peer-disabled:border-divider peer-disabled:bg-transparent peer-disabled:text-muted peer-disabled:opacity-40;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-yellow-light focus:p-3 focus:text-gray-900;
+  }
+}
